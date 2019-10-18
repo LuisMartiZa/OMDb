@@ -1,10 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '12.0'
+platform :ios, '10.0'
 use_frameworks!
 
 target 'omdb' do
   pod 'Alamofire'
   pod 'AlamofireObjectMapper', '~> 5.2'
   pod 'PromiseKit', '~> 6.8'
-  pod 'Kingfisher'
+  pod 'Kingfisher', '~> 4.0'
 end

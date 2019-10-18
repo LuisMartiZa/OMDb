@@ -3,7 +3,7 @@ PODS:
   - AlamofireObjectMapper (5.2.0):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
-  - Kingfisher (5.1.1)
+  - Kingfisher (4.10.1)
   - ObjectMapper (3.4.2)
   - PromiseKit (6.8.3):
     - PromiseKit/CorePromise (= 6.8.3)
@@ -18,7 +18,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireObjectMapper (~> 5.2)
-  - Kingfisher
+  - Kingfisher (~> 4.0)
   - PromiseKit (~> 6.8)
 
 SPEC REPOS:
@@ -32,10 +32,10 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
-  Kingfisher: 2558186963e5be42d98c5b110ccb3130148b77e4
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
 
-PODFILE CHECKSUM: 0fa61af483dda0fd5c0a20cad1b98316988e7f00
+PODFILE CHECKSUM: 4297e8707c664915a539875a98b4c1a8538ef0a9
 
 COCOAPODS: 1.8.4
