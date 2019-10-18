@@ -13,9 +13,11 @@
 		97421BE1235A20F000575B48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97421BDF235A20F000575B48 /* LaunchScreen.storyboard */; };
 		97421BE9235A22C200575B48 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97421BE8235A22C200575B48 /* Wireframe.swift */; };
 		97421BEB235A238100575B48 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97421BEA235A238100575B48 /* ServiceLocator.swift */; };
+		E4795D6478A9867ACDF8A716 /* Pods_omdb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492868B577960FF12C955E8 /* Pods_omdb.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8492868B577960FF12C955E8 /* Pods_omdb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_omdb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97421BD3235A20EC00575B48 /* omdb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = omdb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97421BD6235A20EC00575B48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97421BDB235A20EC00575B48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		97421BE2235A20F000575B48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97421BE8235A22C200575B48 /* Wireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		97421BEA235A238100575B48 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		C2FA9F6C30683A36246750EE /* Pods-omdb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-omdb.debug.xcconfig"; path = "Target Support Files/Pods-omdb/Pods-omdb.debug.xcconfig"; sourceTree = "<group>"; };
+		F4ACDC1DC0DF7C9BD37431F8 /* Pods-omdb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-omdb.release.xcconfig"; path = "Target Support Files/Pods-omdb/Pods-omdb.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4795D6478A9867ACDF8A716 /* Pods_omdb.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1ADD518C730D32DDF1C8545E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C2FA9F6C30683A36246750EE /* Pods-omdb.debug.xcconfig */,
+				F4ACDC1DC0DF7C9BD37431F8 /* Pods-omdb.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3128DB98A3A26C59AF176958 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8492868B577960FF12C955E8 /* Pods_omdb.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		97421BCA235A20EC00575B48 = {
 			isa = PBXGroup;
 			children = (
 				97421BD5235A20EC00575B48 /* omdb */,
 				97421BD4235A20EC00575B48 /* Products */,
+				1ADD518C730D32DDF1C8545E /* Pods */,
+				3128DB98A3A26C59AF176958 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97421BE5235A20F000575B48 /* Build configuration list for PBXNativeTarget "omdb" */;
 			buildPhases = (
+				98BB75D6351E94ED03F42F50 /* [CP] Check Pods Manifest.lock */,
 				97421BCF235A20EC00575B48 /* Sources */,
 				97421BD0235A20EC00575B48 /* Frameworks */,
 				97421BD1235A20EC00575B48 /* Resources */,
+				1A1F2FF5EC84ECF0F1DB0AEA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -172,6 +199,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A1F2FF5EC84ECF0F1DB0AEA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-omdb/Pods-omdb-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-omdb/Pods-omdb-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-omdb/Pods-omdb-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98BB75D6351E94ED03F42F50 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-omdb-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		97421BCF235A20EC00575B48 /* Sources */ = {
@@ -324,10 +393,12 @@
 		};
 		97421BE6235A20F000575B48 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2FA9F6C30683A36246750EE /* Pods-omdb.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = omdb/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -341,10 +412,12 @@
 		};
 		97421BE7235A20F000575B48 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4ACDC1DC0DF7C9BD37431F8 /* Pods-omdb.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = omdb/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
