@@ -20,6 +20,11 @@
 		978CD77A235A376D008DDF25 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978CD779235A376D008DDF25 /* SearchViewController.swift */; };
 		978CD77C235A3EBA008DDF25 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978CD77B235A3EB9008DDF25 /* SearchItem.swift */; };
 		978CD77E235A42E3008DDF25 /* SearchDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978CD77D235A42E3008DDF25 /* SearchDetailItem.swift */; };
+		978CD781235A49C1008DDF25 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978CD780235A49C1008DDF25 /* DetailPresenter.swift */; };
+		978CD783235A49CF008DDF25 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978CD782235A49CF008DDF25 /* DetailView.swift */; };
+		978CD785235A49DC008DDF25 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978CD784235A49DC008DDF25 /* DetailViewController.swift */; };
+		978CD787235A4A4B008DDF25 /* SearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978CD786235A4A4B008DDF25 /* SearchRepository.swift */; };
+		978CD789235A4ADF008DDF25 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978CD788235A4ADF008DDF25 /* SearchInteractor.swift */; };
 		E4795D6478A9867ACDF8A716 /* Pods_omdb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492868B577960FF12C955E8 /* Pods_omdb.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +45,11 @@
 		978CD779235A376D008DDF25 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		978CD77B235A3EB9008DDF25 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 		978CD77D235A42E3008DDF25 /* SearchDetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailItem.swift; sourceTree = "<group>"; };
+		978CD780235A49C1008DDF25 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		978CD782235A49CF008DDF25 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		978CD784235A49DC008DDF25 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		978CD786235A4A4B008DDF25 /* SearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepository.swift; sourceTree = "<group>"; };
+		978CD788235A4ADF008DDF25 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		C2FA9F6C30683A36246750EE /* Pods-omdb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-omdb.debug.xcconfig"; path = "Target Support Files/Pods-omdb/Pods-omdb.debug.xcconfig"; sourceTree = "<group>"; };
 		F4ACDC1DC0DF7C9BD37431F8 /* Pods-omdb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-omdb.release.xcconfig"; path = "Target Support Files/Pods-omdb/Pods-omdb.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +121,7 @@
 		97421BEC235A23CC00575B48 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				978CD788235A4ADF008DDF25 /* SearchInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -127,6 +138,7 @@
 		97421BEE235A23DF00575B48 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				978CD786235A4A4B008DDF25 /* SearchRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -134,6 +146,7 @@
 		97421BEF235A23EE00575B48 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				978CD77F235A4993008DDF25 /* DetailView */,
 				978CD76F235A36CA008DDF25 /* SearchView */,
 			);
 			path = Screens;
@@ -166,6 +179,16 @@
 				978CD773235A3710008DDF25 /* SearchTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		978CD77F235A4993008DDF25 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				978CD780235A49C1008DDF25 /* DetailPresenter.swift */,
+				978CD782235A49CF008DDF25 /* DetailView.swift */,
+				978CD784235A49DC008DDF25 /* DetailViewController.swift */,
+			);
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,7 +310,12 @@
 				978CD77C235A3EBA008DDF25 /* SearchItem.swift in Sources */,
 				97421BEB235A238100575B48 /* ServiceLocator.swift in Sources */,
 				978CD77A235A376D008DDF25 /* SearchViewController.swift in Sources */,
+				978CD785235A49DC008DDF25 /* DetailViewController.swift in Sources */,
+				978CD781235A49C1008DDF25 /* DetailPresenter.swift in Sources */,
 				978CD77E235A42E3008DDF25 /* SearchDetailItem.swift in Sources */,
+				978CD789235A4ADF008DDF25 /* SearchInteractor.swift in Sources */,
+				978CD787235A4A4B008DDF25 /* SearchRepository.swift in Sources */,
+				978CD783235A49CF008DDF25 /* DetailView.swift in Sources */,
 				978CD772235A3700008DDF25 /* SearchTableViewCell.swift in Sources */,
 				978CD776235A373F008DDF25 /* SearchPresenter.swift in Sources */,
 				97421BD7235A20EC00575B48 /* AppDelegate.swift in Sources */,

@@ -10,13 +10,51 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="dol-2J-ftT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="64" id="dol-2J-ftT" customClass="SearchTableViewCell" customModule="omdb" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dol-2J-ftT" id="dqI-4h-a4S">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="63.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8z-si-oYV">
+                        <rect key="frame" x="16" y="0.0" width="285" height="32"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="di8-ko-dQ6">
+                        <rect key="frame" x="16" y="32" width="285" height="31.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Cr-ZR-91b">
+                        <rect key="frame" x="301" y="0.0" width="113" height="63.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="9Cr-ZR-91b" secondAttribute="height" multiplier="16:9" id="ViB-RA-W11"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="di8-ko-dQ6" firstAttribute="leading" secondItem="V8z-si-oYV" secondAttribute="leading" id="3HP-pb-Dy5"/>
+                    <constraint firstItem="V8z-si-oYV" firstAttribute="top" secondItem="dqI-4h-a4S" secondAttribute="top" id="5am-2p-dz3"/>
+                    <constraint firstAttribute="bottom" secondItem="di8-ko-dQ6" secondAttribute="bottom" id="A3h-AM-EZh"/>
+                    <constraint firstItem="di8-ko-dQ6" firstAttribute="top" secondItem="V8z-si-oYV" secondAttribute="bottom" id="Aa7-tD-dUt"/>
+                    <constraint firstItem="9Cr-ZR-91b" firstAttribute="leading" secondItem="V8z-si-oYV" secondAttribute="trailing" id="Ho3-lC-8SO"/>
+                    <constraint firstItem="di8-ko-dQ6" firstAttribute="trailing" secondItem="V8z-si-oYV" secondAttribute="trailing" id="TgA-vF-70r"/>
+                    <constraint firstItem="9Cr-ZR-91b" firstAttribute="top" secondItem="dqI-4h-a4S" secondAttribute="top" id="YFe-Ys-MjO"/>
+                    <constraint firstItem="V8z-si-oYV" firstAttribute="height" secondItem="di8-ko-dQ6" secondAttribute="height" id="aP8-vo-lYD"/>
+                    <constraint firstItem="V8z-si-oYV" firstAttribute="leading" secondItem="dqI-4h-a4S" secondAttribute="leading" constant="16" id="gbZ-P4-yGw"/>
+                    <constraint firstAttribute="bottom" secondItem="9Cr-ZR-91b" secondAttribute="bottom" id="kkC-v7-7hi"/>
+                    <constraint firstAttribute="trailing" secondItem="9Cr-ZR-91b" secondAttribute="trailing" id="w5E-DI-cCT"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="posterImageView" destination="9Cr-ZR-91b" id="iWH-9x-Ovd"/>
+                <outlet property="titleLabel" destination="V8z-si-oYV" id="D5N-Yt-DwA"/>
+                <outlet property="yearLabel" destination="di8-ko-dQ6" id="3zP-TR-UtS"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>
