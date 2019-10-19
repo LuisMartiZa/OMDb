@@ -50,7 +50,7 @@ class SearchViewController: UITableViewController, SearchView {
     private func setupSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Busca aquí..."
+        searchController.searchBar.placeholder = "Search here..."
         
         navigationItem.searchController = searchController
         definesPresentationContext = true
@@ -100,7 +100,7 @@ extension SearchViewController {
         let numberOfRows = presenter.numberOfRows(section: section)
         
         if numberOfRows == 0 {
-            tableView.setEmptyMessage("Busca...Busca 😁")
+            tableView.setEmptyMessage("Search...Search 😁")
         } else {
             tableView.restore()
         }

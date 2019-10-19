@@ -51,7 +51,7 @@ class DetailViewController: UIViewController {
         durationLabel.text = detailSearch.runtime
         genreLabel.text = detailSearch.genre
         plotLabel.text = detailSearch.plot
-        websiteLabel.text = detailSearch.website?.absoluteString ?? "Sin web"
+        websiteLabel.text = detailSearch.website?.absoluteString ?? "NO WEB"
     }
     
     // MARK: IBActions
@@ -91,7 +91,7 @@ class DetailViewController: UIViewController {
         if let websiteURL = presenter?.getWebsiteURL() {
             presentShareView(for: [websiteURL])
         } else {
-            showAlert(title: "ERROR", body: "No se puede compartir")
+            showAlert(title: "ERROR", body: "Can't Share 😖")
         }
     }
     
