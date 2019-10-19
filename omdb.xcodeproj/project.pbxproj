@@ -31,6 +31,7 @@
 		978CD785235A49DC008DDF25 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978CD784235A49DC008DDF25 /* DetailViewController.swift */; };
 		978CD787235A4A4B008DDF25 /* SearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978CD786235A4A4B008DDF25 /* SearchRepository.swift */; };
 		978CD789235A4ADF008DDF25 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978CD788235A4ADF008DDF25 /* SearchInteractor.swift */; };
+		979A30FE235B679F00C274FA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979A30FD235B679F00C274FA /* NetworkManager.swift */; };
 		E4795D6478A9867ACDF8A716 /* Pods_omdb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492868B577960FF12C955E8 /* Pods_omdb.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		978CD784235A49DC008DDF25 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		978CD786235A4A4B008DDF25 /* SearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepository.swift; sourceTree = "<group>"; };
 		978CD788235A4ADF008DDF25 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		979A30FD235B679F00C274FA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C2FA9F6C30683A36246750EE /* Pods-omdb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-omdb.debug.xcconfig"; path = "Target Support Files/Pods-omdb/Pods-omdb.debug.xcconfig"; sourceTree = "<group>"; };
 		F4ACDC1DC0DF7C9BD37431F8 /* Pods-omdb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-omdb.release.xcconfig"; path = "Target Support Files/Pods-omdb/Pods-omdb.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 		973335EB235AF72B00F9BB8C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				97792993235B6764001BE751 /* Managers */,
 				971283C0235B4D2B001BF48F /* Components */,
 				973335EC235AF73200F9BB8C /* Extensions */,
 				973335EF235B143B00F9BB8C /* BaseStoryboard.swift */,
@@ -201,6 +204,14 @@
 				97421BDA235A20EC00575B48 /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		97792993235B6764001BE751 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				979A30FD235B679F00C274FA /* NetworkManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		978CD76F235A36CA008DDF25 /* SearchView */ = {
@@ -352,6 +363,7 @@
 				97792992235B4D90001BE751 /* SRCopyableLabel.swift in Sources */,
 				978CD77C235A3EBA008DDF25 /* SearchItem.swift in Sources */,
 				97421BEB235A238100575B48 /* ServiceLocator.swift in Sources */,
+				979A30FE235B679F00C274FA /* NetworkManager.swift in Sources */,
 				973335F2235B1D2A00F9BB8C /* UIViewController+Utils.swift in Sources */,
 				978CD77A235A376D008DDF25 /* SearchViewController.swift in Sources */,
 				978CD785235A49DC008DDF25 /* DetailViewController.swift in Sources */,

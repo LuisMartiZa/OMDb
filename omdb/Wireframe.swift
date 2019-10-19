@@ -26,11 +26,20 @@ class Wireframe {
         
         UIView.transition(with: window, duration: 0.6, options: .transitionCrossDissolve, animations: {
             mainNavigatorView.view.alpha = 1.0
-        }, completion: nil)
+        }, completion: { (_) in
+            NetworkManager.shared.startNetworkReachabilityObserver()
+        })
+        
     }
     
     func pushSearchDetailView(data: [String: Any]) {
         let searchDetailView = ServiceLocator.shared.provideDetailSearchView(data: data)
         rootViewController?.pushViewController(searchDetailView, animated: true)
+    }
+    
+    func showLostConnectionAlert() {
+        if topViewController?.presentingViewController == nil {
+            topViewController?.showAlert(title: "WARNING", body: "INTERNET LOST")
+        }
     }
 }
