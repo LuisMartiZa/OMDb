@@ -7,4 +7,5 @@ target 'omdb' do
   pod 'AlamofireObjectMapper', '~> 5.2'
   pod 'PromiseKit', '~> 6.8'
   pod 'Kingfisher', '~> 4.0'
+  pod 'SnapKit'
 end
