@@ -9,6 +9,10 @@ To start, you just have to clone the repo, go to the directory where is our **Po
 ## ARCHITECTURE
 The architecture is based on this article: https://medium.com/build-and-run/clean-architecture-en-ios-viper-893c8c3a75a4, adding the pattern Service Locator
 
+## SPECIAL FUNCTIONALITY
+If you want copy to clipboard the data form a Film, you can do long press on label.
+The same if you want to share website url.
+
 ## SPECIFICATIONS
 XCode 10.2.1
 Swift 4.2
