@@ -44,7 +44,7 @@ class SearchRepository: SearchRepositoryProtocol {
     }
     
     func getSearchDetail(by id: String) -> Promise<[String : Any]> {
-        let url = baseURL.appending("t", value: id)
+        let url = baseURL.appending("i", value: id)
         
         return Promise<[String:Any]> { seal in
             

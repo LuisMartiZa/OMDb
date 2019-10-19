@@ -20,4 +20,14 @@ class DetailPresenter {
         self.detailInteractor = interactor
         self.data = data
     }
+    
+    func load() {
+        if let imdbID = data["filmID"] as? String {
+            detailInteractor.getSearchDetail(by: imdbID).done { (searchDetailItem) in
+                self.view.reloadView(with: searchDetailItem)
+            }.catch { (error) in
+                self.view.displayError(error.localizedDescription)
+            }
+        }
+    }
 }

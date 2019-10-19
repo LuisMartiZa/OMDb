@@ -19,7 +19,7 @@ class SearchDetailItem: SearchItem {
     override func mapping(map: Map) {
         super.mapping(map: map)
         
-        releasedDate    <- map["ReleasedDate"]
+        releasedDate    <- map["Released"]
         runtime         <- map["Runtime"]
         genre           <- map["Genre"]
         plot            <- map["Plot"]

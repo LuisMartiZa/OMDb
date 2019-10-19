@@ -18,6 +18,7 @@
 		97421BE1235A20F000575B48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97421BDF235A20F000575B48 /* LaunchScreen.storyboard */; };
 		97421BE9235A22C200575B48 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97421BE8235A22C200575B48 /* Wireframe.swift */; };
 		97421BEB235A238100575B48 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97421BEA235A238100575B48 /* ServiceLocator.swift */; };
+		97792992235B4D90001BE751 /* SRCopyableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97792991235B4D90001BE751 /* SRCopyableLabel.swift */; };
 		978CD772235A3700008DDF25 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978CD771235A3700008DDF25 /* SearchTableViewCell.swift */; };
 		978CD774235A3711008DDF25 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 978CD773235A3710008DDF25 /* SearchTableViewCell.xib */; };
 		978CD776235A373F008DDF25 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978CD775235A373F008DDF25 /* SearchPresenter.swift */; };
@@ -48,6 +49,7 @@
 		97421BE2235A20F000575B48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97421BE8235A22C200575B48 /* Wireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		97421BEA235A238100575B48 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		97792991235B4D90001BE751 /* SRCopyableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRCopyableLabel.swift; sourceTree = "<group>"; };
 		978CD771235A3700008DDF25 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		978CD773235A3710008DDF25 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		978CD775235A373F008DDF25 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
@@ -93,9 +95,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		971283C0235B4D2B001BF48F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				97792991235B4D90001BE751 /* SRCopyableLabel.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		973335EB235AF72B00F9BB8C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				971283C0235B4D2B001BF48F /* Components */,
 				973335EC235AF73200F9BB8C /* Extensions */,
 				973335EF235B143B00F9BB8C /* BaseStoryboard.swift */,
 			);
@@ -338,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97792992235B4D90001BE751 /* SRCopyableLabel.swift in Sources */,
 				978CD77C235A3EBA008DDF25 /* SearchItem.swift in Sources */,
 				97421BEB235A238100575B48 /* ServiceLocator.swift in Sources */,
 				973335F2235B1D2A00F9BB8C /* UIViewController+Utils.swift in Sources */,
