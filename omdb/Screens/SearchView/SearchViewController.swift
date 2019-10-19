@@ -10,7 +10,10 @@ import UIKit
 
 class SearchViewController: UITableViewController, SearchView {
     // MARK: - Variables
+    var presenter: SearchPresenter? = nil
     let searchController = UISearchController(searchResultsController: nil)
+    var dispatchWorkItem: DispatchWorkItem? = nil
+    let typeInterval: TimeInterval = 1.0
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -33,7 +36,7 @@ class SearchViewController: UITableViewController, SearchView {
     // MARK: - Other methods
     private func setupView() {
         title = "OMDb Search Engine"
-        
+        tableView.register(UINib(nibName: SearchTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: SearchTableViewCell.reuseIdenfier)
         setupSearchController()
     }
     private func setupSearchController() {
@@ -44,11 +47,28 @@ class SearchViewController: UITableViewController, SearchView {
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
+    
+    private func handleTyping(_ text: String) {
+        dispatchWorkItem?.cancel()
+        
+        dispatchWorkItem = DispatchWorkItem(block: { [weak self] in
+            guard let self = self else { return }
+            self.presenter?.search(text)
+        })
+        
+        if let typingWorkItem = dispatchWorkItem {
+            DispatchQueue.main.asyncAfter(deadline: .now() + typeInterval, execute: typingWorkItem)
+        }
+    }
 }
 
 extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        print("TEXT: \(searchController.searchBar.text!)")
+        if let text = searchController.searchBar.text, text.count > 3 {
+            handleTyping(text)
+        } else {
+            presenter?.cleanSearch()
+        }
     }
 }
 
@@ -70,6 +90,13 @@ extension SearchViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let data = presenter?.searchItem(forRow: indexPath.row)
+        let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.reuseIdenfier)
+        
+        if let searchTableCell = cell as? SearchTableViewCell {
+            searchTableCell.setData(from: data!)
+        }
+
+        return cell!
     }
 }

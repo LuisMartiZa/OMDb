@@ -11,10 +11,13 @@ import Kingfisher
 
 class SearchTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var posterImageView: UIImageView!
+    
+    // MARK: - Variables
+    static let nibName = "SearchTableViewCell"
+    static let reuseIdenfier = "searchIdentifier"
     
     func setData(from searchItem: SearchItem) {
         self.titleLabel.text = searchItem.title

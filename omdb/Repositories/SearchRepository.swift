@@ -7,3 +7,60 @@
 //
 
 import Foundation
+import Alamofire
+import PromiseKit
+
+protocol SearchRepositoryProtocol {
+    func getSearchList(by text: String) -> Promise<[[String:Any]]>
+    func getSearchDetail(by id: String) -> Promise<[String:Any]>
+}
+
+enum SearchRepositoryError: Error {
+    case getSearchListError
+    case getSearchDetailError
+}
+
+class SearchRepository: SearchRepositoryProtocol {
+    
+    func getSearchList(by text: String) -> Promise<[[String:Any]]> {
+        let url = baseURL.appending("s", value: text)
+        
+        return Promise<[[String:Any]]> { seal in
+            
+            Alamofire.request(url).responseJSON(completionHandler: { (response: DataResponse<Any>) in
+                switch response.result {
+                case .success:
+                    if let json = response.value as? [[String:Any]] {
+                        seal.fulfill(json)
+                    } else {
+                        seal.reject(SearchRepositoryError.getSearchListError)
+                    }
+                case .failure(_):
+                    seal.reject(SearchRepositoryError.getSearchListError)
+                    break
+                }
+            })
+        }
+    }
+    
+    func getSearchDetail(by id: String) -> Promise<[String : Any]> {
+        let url = baseURL.appending("t", value: id)
+        
+        return Promise<[String:Any]> { seal in
+            
+            Alamofire.request(url).responseJSON(completionHandler: { (response: DataResponse<Any>) in
+                switch response.result {
+                case .success:
+                    if let json = response.value as? [String:Any] {
+                        seal.fulfill(json)
+                    } else {
+                        seal.reject(SearchRepositoryError.getSearchDetailError)
+                    }
+                case .failure(_):
+                    seal.reject(SearchRepositoryError.getSearchDetailError)
+                    break
+                }
+            })
+        }
+    }
+}
