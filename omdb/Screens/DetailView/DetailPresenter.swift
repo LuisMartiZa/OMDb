@@ -34,7 +34,7 @@ class DetailPresenter: NSObject {
     }
     
     func getWebsiteURL() ->URL? {
-        return URL(string: "https://www.marca.es")!//searchDetail?.website
+        return searchDetail?.website
     }
     
     func saveImage(_ image: UIImage) {
