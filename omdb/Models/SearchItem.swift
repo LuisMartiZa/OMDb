@@ -21,8 +21,9 @@ class SearchItem: Mappable {
     }
     
     func mapping(map: Map) {
+        imdbID          <- map["imdbID"]
         title           <- map["Title"]
         year            <- map["Year"]
-        posterImage     <- map["PosterImage"]
+        posterImage     <- map["Poster"]
     }
 }

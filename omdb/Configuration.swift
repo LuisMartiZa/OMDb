@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - Constants
-let kAPIKey = "490ab03"
+let kAPIKey = "490ab03b"
 
 // MARK: - URLs
 let baseURL = URL(string: "http://www.omdbapi.com/?apikey=\(kAPIKey)")!

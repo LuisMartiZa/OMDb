@@ -15,8 +15,8 @@ protocol SearchInteractorProtocol {
 }
 
 enum SearchInteractorError: Error {
-    case getSearchListError
-    case getSearchDetailError
+    case getSearchListError(String)
+    case getSearchDetailError(String)
 }
 
 class SearchInteractor: SearchInteractorProtocol {
@@ -30,13 +30,20 @@ class SearchInteractor: SearchInteractorProtocol {
         return Promise<[SearchItem]> { seal in
             repository.getSearchList(by: text).done({ (json) in
                 var searchItemArray: [SearchItem] = []
-                for searchItemJSON in json {
-                    let searchItem = SearchItem(JSON: searchItemJSON)!
-                    searchItemArray.append(searchItem)
+                if let jsonResults = json["Search"] as? [[String: Any]] {
+                    for searchItemJSON in jsonResults {
+                        let searchItem = SearchItem(JSON: searchItemJSON)!
+                        searchItemArray.append(searchItem)
+                    }
+                    seal.fulfill(searchItemArray)
+                } else {
+                    let errorInteractor = SearchInteractorError.getSearchListError("No data")
+                    seal.reject(errorInteractor)
                 }
-                seal.fulfill(searchItemArray)
+                
             }).catch({ (error) in
-                seal.reject(SearchInteractorError.getSearchListError)
+                let errorInteractor = SearchInteractorError.getSearchListError(error.localizedDescription)
+                seal.reject(errorInteractor)
             })
         }
     }
@@ -47,10 +54,12 @@ class SearchInteractor: SearchInteractorProtocol {
                 if let searchDetailItem = SearchDetailItem(JSON: json) {
                     seal.fulfill(searchDetailItem)
                 } else {
-                    seal.reject(SearchInteractorError.getSearchDetailError)
+                    let errorInteractor = SearchInteractorError.getSearchDetailError("JSON Malformed")
+                    seal.reject(errorInteractor)
                 }
             }).catch({ (error) in
-                seal.reject(SearchInteractorError.getSearchDetailError)
+                let errorInteractor = SearchInteractorError.getSearchDetailError(error.localizedDescription)
+                seal.reject(errorInteractor)
             })
         }
     }

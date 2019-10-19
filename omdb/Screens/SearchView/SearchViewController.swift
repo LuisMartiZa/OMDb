@@ -9,8 +9,9 @@
 import UIKit
 
 class SearchViewController: UITableViewController, SearchView {
+    
     // MARK: - Variables
-    var presenter: SearchPresenter? = nil
+    var presenter: SearchPresenter!
     let searchController = UISearchController(searchResultsController: nil)
     var dispatchWorkItem: DispatchWorkItem? = nil
     let typeInterval: TimeInterval = 1.0
@@ -31,6 +32,10 @@ class SearchViewController: UITableViewController, SearchView {
     // MARK: - SearchView Delegate Protocol
     func reloadData() {
         tableView.reloadData()
+    }
+    
+    func displayError(_ error: String) {
+        showAlert(title: "ERROR", body: error)
     }
     
     // MARK: - Other methods
@@ -75,18 +80,18 @@ extension SearchViewController: UISearchResultsUpdating {
 // MARK: - UITableViewControllerDelegate
 extension SearchViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        presenter?.didSelect(row: indexPath.row, section: indexPath.section)
     }
 }
 
 // MARK: - UITableViewControllerDataSource
 extension SearchViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return presenter.numberOfSections()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return presenter.numberOfRows(section: section)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -98,5 +103,9 @@ extension SearchViewController {
         }
 
         return cell!
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 64.0
     }
 }

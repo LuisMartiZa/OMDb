@@ -6,4 +6,22 @@
 //  Copyright © 2019 Luis Martínez Zarza. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class DetailViewController: UIViewController, DetailView {
+    // MARK: - Variables
+    var presenter: DetailPresenter? = nil
+    
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupView()
+    }
+    
+    // MARK: - Other methods
+    private func setupView() {
+        title = "Film"
+        
+    }
+}

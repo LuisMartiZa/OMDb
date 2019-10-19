@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+class DetailPresenter {
+    var view: DetailView!
+    var detailInteractor: SearchInteractorProtocol!
+    var data: [String: Any]!
+    
+    convenience init(view: DetailView, interactor: SearchInteractorProtocol, data: [String: Any]) {
+        self.init()
+        
+        self.view = view
+        self.detailInteractor = interactor
+        self.data = data
+    }
+}

@@ -10,4 +10,5 @@ import Foundation
 
 protocol SearchView {
     func reloadData()
+    func displayError(_ error: String)
 }
