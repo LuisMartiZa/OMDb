@@ -12,6 +12,7 @@ class DetailPresenter: NSObject {
     var view: DetailView!
     var detailInteractor: SearchInteractorProtocol!
     var data: [String: Any]!
+    var searchDetail: SearchDetailItem?
     
     convenience init(view: DetailView, interactor: SearchInteractorProtocol, data: [String: Any]) {
         self.init()
@@ -25,10 +26,15 @@ class DetailPresenter: NSObject {
         if let imdbID = data["filmID"] as? String {
             detailInteractor.getSearchDetail(by: imdbID).done { (searchDetailItem) in
                 self.view.reloadView(with: searchDetailItem)
+                self.searchDetail = searchDetailItem
             }.catch { (error) in
                 self.view.displayAlert(title: "Error", body: error.localizedDescription)
             }
         }
+    }
+    
+    func getWebsiteURL() ->URL? {
+        return URL(string: "https://www.marca.es")!//searchDetail?.website
     }
     
     func saveImage(_ image: UIImage) {

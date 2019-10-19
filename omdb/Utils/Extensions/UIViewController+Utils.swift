@@ -17,4 +17,9 @@ extension UIViewController {
         alertController.addAction(defaultAction)
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    func presentShareView(for items: [Any]) {
+        let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        self.present(activityViewController, animated: true)
+    }
 }

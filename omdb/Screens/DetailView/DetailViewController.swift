@@ -87,14 +87,22 @@ class DetailViewController: UIViewController {
             self.isHeaderFullscreen.toggle()
         })
     }
+    @IBAction func shareWebsiteAction(_ sender: UILongPressGestureRecognizer) {
+        if let websiteURL = presenter?.getWebsiteURL() {
+            presentShareView(for: [websiteURL])
+        } else {
+            showAlert(title: "ERROR", body: "No se puede compartir")
+        }
+    }
+    
 }
 
 extension DetailViewController: DetailView {
     func reloadView(with detailSearch: SearchDetailItem) {
-        setupView(detailSearch)
+        setupView(detailSearch)   
     }
     
     func displayAlert(title: String, body: String) {
-        self.showAlert(title: title, body: body)
+        showAlert(title: title, body: body)
     }
 }

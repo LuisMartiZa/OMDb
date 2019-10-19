@@ -191,6 +191,7 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWY-4a-NmC">
                                                         <rect key="frame" x="16" y="0.0" width="0.0" height="75.333333333333329"/>
+                                                        <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -203,6 +204,9 @@
                                                     <constraint firstAttribute="bottom" secondItem="LWY-4a-NmC" secondAttribute="bottom" id="bfr-cR-BV2"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LWY-4a-NmC" secondAttribute="trailing" id="qqh-dv-B4s"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="AJi-D4-PF9" appends="YES" id="V9w-2w-8DE"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -242,6 +246,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uxz-OU-maA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="AJi-D4-PF9">
+                    <connections>
+                        <action selector="shareWebsiteAction:" destination="DMt-7q-R7h" id="57f-GT-iyh"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="522.39999999999998" y="89.408866995073893"/>
         </scene>
