@@ -16,6 +16,8 @@ class SearchViewController: UITableViewController, SearchView {
     var dispatchWorkItem: DispatchWorkItem? = nil
     let typeInterval: TimeInterval = 1.0
     
+    var lastSearchString: String = ""
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,7 @@ class SearchViewController: UITableViewController, SearchView {
     }
     
     func displayError(_ error: String) {
+        reloadData()
         showAlert(title: "ERROR", body: error)
     }
     
@@ -58,6 +61,7 @@ class SearchViewController: UITableViewController, SearchView {
         
         dispatchWorkItem = DispatchWorkItem(block: { [weak self] in
             guard let self = self else { return }
+            self.lastSearchString = text
             self.presenter?.search(text)
         })
         
@@ -70,7 +74,9 @@ class SearchViewController: UITableViewController, SearchView {
 extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if let text = searchController.searchBar.text, text.count > 3 {
-            handleTyping(text)
+            if text != lastSearchString {
+                handleTyping(text)
+            }
         } else {
             presenter?.cleanSearch()
         }
@@ -91,7 +97,15 @@ extension SearchViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.numberOfRows(section: section)
+        let numberOfRows = presenter.numberOfRows(section: section)
+        
+        if numberOfRows == 0 {
+            tableView.setEmptyMessage("Busca...Busca 😁")
+        } else {
+            tableView.restore()
+        }
+        
+        return numberOfRows
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
