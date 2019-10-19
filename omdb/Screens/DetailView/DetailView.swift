@@ -10,5 +10,5 @@ import Foundation
 
 protocol DetailView {
     func reloadView(with detailSearch: SearchDetailItem)
-    func displayError(_ error: String)
+    func displayAlert(title: String, body: String)
 }

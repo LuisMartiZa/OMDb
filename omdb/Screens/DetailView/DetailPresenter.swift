@@ -6,9 +6,9 @@
 //  Copyright © 2019 Luis Martínez Zarza. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class DetailPresenter {
+class DetailPresenter: NSObject {
     var view: DetailView!
     var detailInteractor: SearchInteractorProtocol!
     var data: [String: Any]!
@@ -26,8 +26,21 @@ class DetailPresenter {
             detailInteractor.getSearchDetail(by: imdbID).done { (searchDetailItem) in
                 self.view.reloadView(with: searchDetailItem)
             }.catch { (error) in
-                self.view.displayError(error.localizedDescription)
+                self.view.displayAlert(title: "Error", body: error.localizedDescription)
             }
+        }
+    }
+    
+    func saveImage(_ image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // we got back an error!
+            self.view.displayAlert(title: "Save Error", body: error.localizedDescription)
+        } else {
+            self.view.displayAlert(title: "Saved", body: "Your image has been saved to your photos.")
         }
     }
 }

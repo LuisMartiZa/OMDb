@@ -9,8 +9,9 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    
+    // MARK: - IBOutlets
     @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var releasedDateLabel: UILabel!
@@ -19,9 +20,19 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var plotLabel: UILabel!
     @IBOutlet weak var websiteLabel: UILabel!
     
+    @IBOutlet weak var fullscreenBtn: UIButton!
+    
     // MARK: - Variables
     var presenter: DetailPresenter? = nil
-    
+    var isHeaderFullscreen: Bool = false {
+        didSet {
+            if isHeaderFullscreen {
+                fullscreenBtn.setImage(#imageLiteral(resourceName: "fullscreenExitIcon"), for: .normal)
+            } else {
+                fullscreenBtn.setImage(#imageLiteral(resourceName: "fullscreenIcon"), for: .normal)
+            }
+        }
+    }
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +52,16 @@ class DetailViewController: UIViewController {
         plotLabel.text = detailSearch.plot
         websiteLabel.text = detailSearch.website?.absoluteString ?? "Sin web"
     }
+    
+    // MARK: IBActions
+    @IBAction func downloadImageAction(_ sender: Any) {
+        if let image = headerImageView.image {
+            presenter?.saveImage(image)
+        }
+    }
+    @IBAction func fullscreenAction(_ sender: Any) {
+        isHeaderFullscreen.toggle()
+    }
 }
 
 extension DetailViewController: DetailView {
@@ -48,7 +69,7 @@ extension DetailViewController: DetailView {
         setupView(detailSearch)
     }
     
-    func displayError(_ error: String) {
-        self.showAlert(title: "Error", body: error)
+    func displayAlert(title: String, body: String) {
+        self.showAlert(title: title, body: body)
     }
 }

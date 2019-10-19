@@ -42,35 +42,52 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="7G4-GI-Q0n">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="281.33333333333331"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0U-6w-hMz">
-                                        <rect key="frame" x="313" y="235.33333333333331" width="46" height="30"/>
+                                    <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8v1-lm-ezz" userLabel="ButtonsView">
+                                        <rect key="frame" x="0.0" y="216.33333333333331" width="375" height="65"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7P-Vp-XN4">
+                                                <rect key="frame" x="16" y="19" width="20" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="DKs-19-6uz"/>
+                                                    <constraint firstAttribute="height" constant="30" id="omb-wt-zJd"/>
+                                                </constraints>
+                                                <state key="normal" image="downloadIcon"/>
+                                                <connections>
+                                                    <action selector="downloadImageAction:" destination="DMt-7q-R7h" eventType="touchUpInside" id="OjI-nR-sI0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0U-6w-hMz">
+                                                <rect key="frame" x="329" y="19" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="CaW-WX-tzI"/>
+                                                    <constraint firstAttribute="height" constant="30" id="WaM-xQ-OR8"/>
+                                                </constraints>
+                                                <state key="normal" image="fullscreenIcon"/>
+                                                <connections>
+                                                    <action selector="fullscreenAction:" destination="DMt-7q-R7h" eventType="touchUpInside" id="6FR-Br-eUd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="CaW-WX-tzI"/>
-                                            <constraint firstAttribute="height" constant="30" id="WaM-xQ-OR8"/>
+                                            <constraint firstAttribute="height" constant="65" id="Mjb-j5-Z4P"/>
+                                            <constraint firstAttribute="bottom" secondItem="k0U-6w-hMz" secondAttribute="bottom" constant="16" id="hDM-3z-4TP"/>
+                                            <constraint firstAttribute="bottom" secondItem="y7P-Vp-XN4" secondAttribute="bottom" constant="16" id="kRi-4A-TmU"/>
+                                            <constraint firstAttribute="trailing" secondItem="k0U-6w-hMz" secondAttribute="trailing" constant="16" id="pa1-XV-RrS"/>
+                                            <constraint firstItem="y7P-Vp-XN4" firstAttribute="leading" secondItem="8v1-lm-ezz" secondAttribute="leading" constant="16" id="vmW-Xx-mNQ"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7P-Vp-XN4">
-                                        <rect key="frame" x="16" y="235.33333333333331" width="46" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="DKs-19-6uz"/>
-                                            <constraint firstAttribute="height" constant="30" id="omb-wt-zJd"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                    </button>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="k0U-6w-hMz" secondAttribute="bottom" constant="16" id="AWe-g6-u7T"/>
                                     <constraint firstAttribute="width" secondItem="UY1-HK-6xe" secondAttribute="height" multiplier="4:3" id="EsL-tn-Hys"/>
-                                    <constraint firstItem="y7P-Vp-XN4" firstAttribute="centerY" secondItem="k0U-6w-hMz" secondAttribute="centerY" id="Fhy-1d-y89"/>
-                                    <constraint firstAttribute="trailing" secondItem="k0U-6w-hMz" secondAttribute="trailing" constant="16.02" id="FnK-nj-7N5"/>
-                                    <constraint firstItem="y7P-Vp-XN4" firstAttribute="leading" secondItem="UY1-HK-6xe" secondAttribute="leading" constant="16" id="IiE-FK-4i2"/>
+                                    <constraint firstAttribute="bottom" secondItem="8v1-lm-ezz" secondAttribute="bottom" id="LHF-8Q-Pdh"/>
                                     <constraint firstItem="7G4-GI-Q0n" firstAttribute="leading" secondItem="UY1-HK-6xe" secondAttribute="leading" id="NVq-4K-hjh"/>
-                                    <constraint firstAttribute="bottom" secondItem="y7P-Vp-XN4" secondAttribute="bottom" constant="16" id="dWU-bo-JZU"/>
+                                    <constraint firstAttribute="trailing" secondItem="8v1-lm-ezz" secondAttribute="trailing" id="Uvg-nK-fg1"/>
                                     <constraint firstAttribute="trailing" secondItem="7G4-GI-Q0n" secondAttribute="trailing" id="eFR-AG-tmV"/>
                                     <constraint firstItem="7G4-GI-Q0n" firstAttribute="top" secondItem="UY1-HK-6xe" secondAttribute="top" id="r62-97-Xec"/>
                                     <constraint firstAttribute="bottom" secondItem="7G4-GI-Q0n" secondAttribute="bottom" id="rTI-D0-JxV"/>
+                                    <constraint firstItem="8v1-lm-ezz" firstAttribute="leading" secondItem="UY1-HK-6xe" secondAttribute="leading" id="yt5-Kk-lH8"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ey-8P-bQd" userLabel="InfoView">
@@ -213,9 +230,11 @@
                     </view>
                     <connections>
                         <outlet property="durationLabel" destination="hCE-iY-Akv" id="Lq5-lT-h1Y"/>
+                        <outlet property="fullscreenBtn" destination="k0U-6w-hMz" id="OeN-PP-pla"/>
                         <outlet property="genreLabel" destination="pWy-nX-wcO" id="2L6-LI-Spp"/>
                         <outlet property="headerImageView" destination="7G4-GI-Q0n" id="N6u-Fy-BCL"/>
                         <outlet property="headerView" destination="UY1-HK-6xe" id="dpS-DF-PXm"/>
+                        <outlet property="infoView" destination="4ey-8P-bQd" id="ozt-ad-MIk"/>
                         <outlet property="plotLabel" destination="uKV-XM-V9g" id="g9b-3A-IyW"/>
                         <outlet property="releasedDateLabel" destination="1vp-47-YiB" id="83R-H2-uEd"/>
                         <outlet property="titleLabel" destination="aCO-OL-NFn" id="tVH-xo-Gqj"/>
@@ -224,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uxz-OU-maA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="523" y="90"/>
+            <point key="canvasLocation" x="522.39999999999998" y="89.408866995073893"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vh7-yU-vkv">
@@ -241,6 +260,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="downloadIcon" width="125.66666412353516" height="170.66667175292969"/>
+        <image name="fullscreenIcon" width="85.333335876464844" height="85.333335876464844"/>
         <image name="placeholder" width="319.33334350585938" height="191.66667175292969"/>
     </resources>
 </document>
